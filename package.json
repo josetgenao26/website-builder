@@ -1,0 +1,44 @@
+{
+  "name": "webpage-builder",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write --list-different .",
+    "postinstall": "npx husky install"
+  },
+  "dependencies": {
+    "next": "14.1.4",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "husky": "^9.0.11",
+    "postcss": "^8",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format:fix && git add -A .",
+      "commit-msg": "npm run build"
+    }
+  }
+}
